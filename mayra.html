@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Página do coração</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      
+      #coracao {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50vw;
+        height: 50vw;
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 50%;
+        background-color: lightblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3em;
+        color: white;
+        text-shadow: 2px 2px black;
+        cursor: pointer;
+      }
+      
+      #dialogo {
+        position: absolute;
+        top: calc(50% + 60px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        font-size: 1.2em;
+        display: none;
+      }
+      
+      #mensagem {
+        margin: 0;
+      }
+      
+      #botao {
+        margin-top: 10px;
+        background-color: lightblue;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="coracao">&#10084;</div>
+    <div id="dialogo">
+      <p id="mensagem">Boa noite Mayra, tenha ótimos sonhos, pequena! ❤️</p>
+      <button id="botao" onclick="fecharDialogo()">OK</button>
+    </div>
+    <script>
+      var coracao = document.getElementById('coracao');
+      var dialogo = document.getElementById('dialogo');
+      
+      function abrirDialogo() {
+        dialogo.style.display = 'block';
+      }
+      
+      function fecharDialogo() {
+        dialogo.style.display = 'none';
+      }
+      
+      coracao.addEventListener('click', abrirDialogo);
+    </script>
+  </body>
+</html>
